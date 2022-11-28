@@ -1,4 +1,4 @@
-package com.viana.firebasecore.core;
+package com.renz.firebase4j.core;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;

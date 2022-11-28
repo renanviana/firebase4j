@@ -1,4 +1,4 @@
-package com.viana.firebasecore.core;
+package com.renz.firebase4j.core;
 
 import java.util.List;
 import java.util.Map;
