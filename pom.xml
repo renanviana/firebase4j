@@ -52,4 +52,12 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Renz Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/renanviana/firebase4j</url>
+		</repository>
+	</distributionManagement>
+
 </project>
