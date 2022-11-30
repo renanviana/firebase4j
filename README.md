@@ -105,6 +105,12 @@ try (FirebaseConnection firebaseConn = new FirebaseConnection()) {
 }
 ```
 
+## :computer: Want to help with the Project?
+
+Create an "issue" and describe the features you would like in the application, or even bugs you found.
+
+If you want to help with corrections, create your branch from `master` and open a Pull Request for me.
+
 > :star: Could you favorite this repository? Just click on the star! Thank you very much!
 
 ## License 
