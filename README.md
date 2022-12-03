@@ -14,7 +14,7 @@ Add the dependency in your pom.xml
 <dependency>
   <groupId>com.renz</groupId>
   <artifactId>firebase4j</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
