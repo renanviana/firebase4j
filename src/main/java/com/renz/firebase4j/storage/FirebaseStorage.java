@@ -11,8 +11,22 @@ import com.google.cloud.storage.Bucket;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.cloud.StorageClient;
 
+/** 
+ * Firebase storage services
+ * 
+ * @author Renan Viana
+ * @author https://github.com/renanviana
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class FirebaseStorage {
 
+	/**
+	 * Method used to upload files
+	 * 
+	 * @param file
+	 * @return Return Media Link to access file uploaded
+	 */
 	public String uploadFile(File file) {
 		Blob blob = createBlob(file);
 		blob.createAcl(Acl.of(User.ofAllUsers(), Acl.Role.READER));

@@ -16,7 +16,7 @@ public abstract class FirestoreRepositoryAbs<T extends Document> {
 		this.clazz = clazz;
 	}
 	
-	protected Class<?> getEntityClass() {
+	protected Class<?> getDocumentClass() {
 		return this.clazz;
 	}
 	
