@@ -26,6 +26,14 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.gson.Gson;
 
+/** 
+ * Connection Firebase Class
+ * 
+ * @author Renan Viana
+ * @author https://github.com/renanviana
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class FirebaseConnection implements Closeable {
 
 	private static final String PRIVATE_KEY = "private_key";
@@ -38,6 +46,13 @@ public class FirebaseConnection implements Closeable {
 	
 	private Map<String, Object> serviceAccountKeyMap;
 	
+	/**
+	 * Method used to open connection with firebase 
+	 * 
+	 * @param serviceAccountKeyPath - File json with credentials of firebase
+	 * @throws IOException - Error because some attribute of json not valid
+	 * @throws URISyntaxException - Error because token server uri from credentials not valid
+	 */
 	public void connect(String serviceAccountKeyPath) throws IOException, URISyntaxException {
 		createFirebaseApp(new FileInputStream(serviceAccountKeyPath));
 	}
@@ -65,6 +80,14 @@ public class FirebaseConnection implements Closeable {
 		FirebaseApp.initializeApp(options);
 	}
 
+	/**
+	 * Method used to build class ServiceAccountCredentials with private kel PKCS#8
+	 * available in service account key json
+	 * 
+	 * @return ServiceAccountCredentials
+	 * @throws IOException
+	 * @throws URISyntaxException
+	 */
 	private ServiceAccountCredentials getCredentials() throws IOException, URISyntaxException {
 
 		String privateKeyPkcs8 = getPrivateKey();
@@ -86,6 +109,12 @@ public class FirebaseConnection implements Closeable {
 				.build();
 	}
 
+	/**
+	 * Method used to create PrivateKey class with private key PKCS#8 provide in service account key json
+	 * @param privateKeyPkcs8
+	 * @return PrivateKey
+	 * @throws IOException
+	 */
 	private PrivateKey privateKeyFromPkcs8(String privateKeyPkcs8) throws IOException {
 		
 		Reader reader = new StringReader(privateKeyPkcs8);
@@ -106,6 +135,9 @@ public class FirebaseConnection implements Closeable {
 		}
 	}
 
+	/**
+	 *  Method used to close firebase connection
+	 */
 	@Override
 	public void close() throws IOException {
 		FirebaseApp.getInstance().delete();
